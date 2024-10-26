@@ -2,9 +2,9 @@ let observer;
 
 function startObserver() {
     observer = new MutationObserver(() => {
-        document.querySelectorAll('article').forEach((tweet) => {
-            if (tweet.innerText.includes('reposté')) {
-                tweet.parentElement.parentElement.style.display = 'none';
+        document.querySelectorAll("article").forEach((tweet) => {
+            if (tweet.innerText.includes("reposté")) {
+                tweet.parentElement.parentElement.style.display = "none";
             }
         });
     });
