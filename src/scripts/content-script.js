@@ -3,6 +3,7 @@ let observer;
 function startObserver() {
     observer = new MutationObserver(() => {
         document.querySelectorAll("article").forEach((tweet) => {
+            // TODO: adapt to other languages.
             if (tweet.innerText.includes("reposté")) {
                 tweet.parentElement.parentElement.style.display = "none";
             }
@@ -20,6 +21,7 @@ function stopObserver() {
 }
 
 chrome.storage.sync.get("observerEnabled", (data) => {
+    // TODO: don't enable if is not on profile page.
     if (data.observerEnabled) {
         startObserver();
     }
